@@ -5,6 +5,8 @@ def clean_tweet(tweet):
     cleaned_tweet = re.sub('@\S+', '', tweet) # Remove mentions
     cleaned_tweet = re.sub('https\S+', '', cleaned_tweet) # Remove urls
     cleaned_tweet = re.sub('\S+…', '', cleaned_tweet) # Remove truncated last word
+    cleaned_tweet = re.sub('\n', '', cleaned_tweet)
+    cleaned_tweet = re.sub('\t', '', cleaned_tweet)
     
     return cleaned_tweet.strip()
 
